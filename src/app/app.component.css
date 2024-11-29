@@ -1,0 +1,131 @@
+.container {
+    text-align: center;
+    background-color:  rgba(8, 156, 255, 0.274);;
+    color: #000000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    font-family: Arial, sans-serif;
+    /* overflow: hidden; */
+  }
+  .top{
+    position: sticky;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .logo{
+    font-size: 20px;
+
+  }
+  .menus{
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+  }
+  .menu{
+    margin-right: 30px;
+    color: rgb(0, 0, 0);
+  }
+
+
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+/* Main-Content */
+.Main-Content{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* TOP */
+.Main-Content-Front{
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+
+.Main-Content-Top{
+  width: 100%;
+  justify-self: left;
+  align-self: flex-start;
+  text-align: justify;
+  font-size: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding:  0vw 0vw;
+}
+.Title-Description{
+  font-size: 20px;
+}
+.Title{
+  padding: 0vw 5vw;
+}
+
+.Main-Content-Middle{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.Middle-Features{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  margin-right: 100px;
+}
+.Features-Title{
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.664);
+}
+.Features-Content{
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.418);
+  text-align: justify;
+}
+.Middle-Feature{
+  border: 1px solid rgba(255, 255, 255, 0.315);
+  border-radius: 10px;
+  padding: 20px;
+  width: 500px;
+  
+  background-color: rgba(0, 27, 87, 0.253);
+  backdrop-filter: blur(5px);
+  box-shadow: 5px  5px 1px rgba(16, 0, 161, 0.37);
+  transform: scale(1);
+  transition: transform 300ms,box-shadow 300ms;
+}
+.Middle-Feature:hover{
+  transform: scale(1.05);
+  box-shadow: 5px  5px 1px rgba(16, 0, 161, 0.37);
+  box-shadow: 5px  5px 5px rgba(16, 0, 161, 0.37);
+}
+.F1{
+  transform: translate(-100px);
+}
+.F4{
+  transform: translate(100px);
+}
+hr{
+  color: white;
+}
+img{
+  height: 700px;
+}
+
+.Main-Content-Bottom{
+  background-color: white;
+}
