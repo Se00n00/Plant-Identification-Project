@@ -2,6 +2,7 @@
   user-select: none;
 }
 .container {
+  height: 100vh;
   text-align: center;
   background-color:  rgba(0, 153, 255, 0.308);
   color: #000000;
@@ -28,8 +29,6 @@
   z-index: 100;
 }
 .logo{
-  margin-left: 40px;
-  /* margin-top: 40px; */
   font-size: 35px;
   font-weight: 600;
   color: white;
@@ -40,8 +39,7 @@
   flex-direction: row;
   justify-items: center;
   align-items: center;
-  margin-right: 30px;
-  overflow: hidden;
+  flex-wrap: wrap;
 }
 .menu-links{
   text-decoration: none;
@@ -53,16 +51,17 @@
 }
 .menu-links::after{
   position: relative;
-  width: 0px;
+  width: inherit;
   height: 0px;
   content: "";
-  border: 1px solid black;
-  /* display: none; */
-  visibility: hidden;
-  transition: width 5s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0);
+  display: block;
+  visibility: visible;
+  transform: scale(0.0);
+  transition: transform 0.4s ease-out;
 }
 .menu-links:hover.menu-links::after{
-  width: 100px;
+  transform: scale(1);
   border: 1px solid black;
   display: block;
   visibility: visible;
@@ -79,21 +78,45 @@ header h1 {
 /*
 _________START : MAIN__________
 */
-
+.main{
+  height: 100%;
+  padding: 50px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.content-info{
+  height: 100%;
+  width: 50%;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+.content-image{
+  height: 100%;
+  width: 50%;
+  border-radius: 20px;
+  border: 1px solid black;
+}
 /*
 _________START : FOOTER________
 */
 .footer{
+  padding-top: 10px;
+  background-color: rgba(0, 128, 0, 0.267);
   box-sizing: border-box;
 }
 .footer-types{
+  position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: nowrap;
 }
 .type-navigator{
-  position: sticky;
+  z-index: 100;
+  position: absolute;
+  margin: 1% 0px;
   top: 0px;
   justify-self: start;
   display: flex;
@@ -102,6 +125,7 @@ _________START : FOOTER________
   align-items: center;
 }
 .type-platform{
+  backdrop-filter: blur(10px);
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -111,6 +135,7 @@ _________START : FOOTER________
   border: 2px solid black;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.425);
 }
 .types-title{
   font-size: 20px;
@@ -124,6 +149,7 @@ _________START : FOOTER________
 
 .footer-details{
   display: flex;
+  width: 100%;
   flex-wrap: wrap-reverse;
   justify-content: space-around;
 }
@@ -137,7 +163,6 @@ _________START : FOOTER________
   max-width: 600px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  
   border: 2px solid black;
   border-bottom: 0px;
   box-sizing: border-box;
@@ -145,6 +170,7 @@ _________START : FOOTER________
   background-color: rgba(3, 255, 3, 0.274);
   /* background-color: black; */
 }
+
 .sub-mobile-art{
   height: 18.5rem;
   width: 60vw;
@@ -159,12 +185,17 @@ _________START : FOOTER________
   border-bottom: 0px;
   background-color: rgba(0, 128, 0, 0.315);
 }
-.android-image{
-  height: 270px;
-  margin: 0;
+.platform-image{
+  object-fit: cover;
 }
 
 /* Individual Download Option */
+.Content-Download-Option{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .Download-Type, .download-link-box{
   width: 300px;
   background-color: #ffffff;
@@ -173,6 +204,9 @@ _________START : FOOTER________
   border: 1px solid rgba(0, 0, 0, 0.034);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.01s ease, box-shadow 0.3s ease;
+}
+.Download-Type{
+  margin-top: 20px;
 }
 .Download-Type:hover{
   transform: translateY(-1px);
@@ -205,6 +239,7 @@ _________START : FOOTER________
 }
 .Download-Image-with-link {
   margin-top: 10px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: center;
 }
