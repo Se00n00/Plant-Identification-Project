@@ -9,18 +9,17 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 1vh;
 }
 .content-info{
   height: 100%;
   width: 50%;
-  margin: 1vh;
   border-radius: 20px;
   border: 1px solid black;
 }
 .content-image{
   height: 100%;
   width: 50%;
-  margin: 1vh;
   border-radius: 20px;
   border: 1px solid black;
 }

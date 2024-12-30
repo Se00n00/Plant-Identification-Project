@@ -2,27 +2,14 @@
   <div class="nav">
     <div class="logo">Plant Species Identification</div>
     <div class="menus">
-      <a href="" class="menu-links">Home</a>
-      <a href="" class="menu-links">Architecture</a>
+      <a routerLink="/home" class="menu-links">Home</a>
+      <a routerLink="/resources" class="menu-links">Resources</a>
       <a href="https://github.com/rishabh-108272/Plant_Species_App/blob/main/README.md" class="menu-links">Architecture</a>
       <a href="https://github.com/rishabh-108272/Plant_Species_App/blob/main/README.md" class="menu-links">Github</a>
     </div>
   </div>
   <div class="main">
-    <div class="home">
-      <div class="home-content">
-        <div class="content-info"></div>
-        <div class="content-image"></div>
-      </div>
-      <div class="main-references">
-        <div class="reference"></div>
-        <div class="reference"></div>
-        <div class="reference"></div>
-      </div>  
-    </div>
-    <div class="resources">
-      
-    </div>
+    <router-outlet></router-outlet>
   </div>
 
   <div class="footer">
@@ -73,4 +60,3 @@
       </div>
   </div>
 </div>
-<router-outlet />
