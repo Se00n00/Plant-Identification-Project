@@ -1,0 +1,141 @@
+{
+    "links":{
+        "home":"Home",
+        "resources":"Resources",
+        "architecture":"files/Architecture.pdf"
+    },
+    "home":{
+        "title":"Home",
+        "subTitle":"Plant Species Identification",
+        "features":[
+            {
+                "title":"Real Time Detection",
+                "subTitle":"Real time dection of plant parts and plant species",
+                "featureImages":"link/to/image",
+                "feature3D":"3D feature object ?"
+            },
+            {
+                "title":"Species Recognition",
+                "subTitle":"identification and classification of various plant types and species based on visual features like flower, fruits and leaf",
+                "featureImages":"link/to/image",
+                "feature3D":"3D feature Object"
+            },
+            {
+                "title":"Multi-Part Plant Feature Analysis",
+                "subTitle":"identify individual plant parts, such as leaves, flowers, and fruits, and seamlessly mapping them to specific plant species for research and agricultural insights",
+                "featureImages":"link/to/image",
+                "feature3D":"3D feature Object"
+            },
+            {
+                "title":"Detailed Species Detection",
+                "subTitle":"Provides the identified plant species details and description",
+                "featureImages":"link/to/image",
+                "feature3D":"3D feature Object"
+            }
+        ],
+        "downloadOption":{
+            "android":{
+                "Heading":"Mobile/Tablet",
+                "platform":"Android",
+                "platformLogo":"path/to/logo",
+                "platformImage":"link/to/image",
+                "requirements":"Minumum Requirements Android OS 4.0 (Name ?) or above",
+                "applicationLogo":"link/to/applicationLogo",
+                "downloadFilePath":"link/to/existing/file"
+            },
+            "ios":{
+                "Heading":"Mobile/Tablet",
+                "platform":"IOS",
+                "platformLogo":"path/to/logo",
+                "platformImage":"link/to/image",
+                "requirements":"Minumum Requirements Android OS 4.0 (Name ?) or above",
+                "applicationLogo":"link/to/applicationLogo",
+                "downloadFilePath":"link/to/existing/file"
+            }
+        }
+    },
+    "dataset":{
+        "title":"Dataset",
+        "subtitle":"Plant Species Dataset",
+        "YOLO":{
+            "purpose":"Object-Detection",
+            "description":"blah-blah",
+            "evaluationMetrics":{
+                "accuracy": 91.0
+            },
+            "model":{
+                "architecture":"YOLO 11n",
+                "paper":"link/to/paper",
+                "about":"about"
+            },
+            "dataset":{
+                "untitled":{
+                    "title":"title",
+                    "dataDescription":"Data description",
+                    "dataLink":"link/to/dataset",
+                    "dataLinkLogo":"link/to/datalinklogo"
+                }
+            }
+        },
+        "effiecientNetB0":{
+            "purpose":"Object-Detection",
+            "description":"blah-blah",
+            "evaluationMetrics":{
+                "accuracy": 91.0
+            },
+            "model":{
+                "architecture":"YOLO 11n",
+                "paper":"link/to/paper",
+                "about":"about"
+            },
+            "dataset":{
+                "untitled":{
+                    "title":"title",
+                    "dataDescription":"Data description",
+                    "dataLink":"link/to/dataset",
+                    "dataLinkLogo":"link/to/datalinklogo"
+                }
+            }
+        },
+        "vGG16":{
+            "purpose":"Classification",
+            "description":"blah-blah",
+            "evaluationMetrics":{
+                "accuracy": 91.0
+            },
+            "model":{
+                "architecture":"YOLO 11n",
+                "paper":"link/to/paper",
+                "about":"about"
+            },
+            "dataset":{
+                "untitled":{
+                    "title":"title",
+                    "dataDescription":"Data description",
+                    "dataLink":"link/to/dataset",
+                    "dataLinkLogo":"link/to/datalinklogo"
+                }
+            }
+        },
+        "resNet50":{
+            "purpose":"Object-Detection",
+            "description":"blah-blah",
+            "evaluationMetrics":{
+                "accuracy": 91.0
+            },
+            "model":{
+                "architecture":"YOLO 11n",
+                "paper":"link/to/paper",
+                "about":"about"
+            },
+            "dataset":{
+                "untitled":{
+                    "title":"title",
+                    "dataDescription":"Data description",
+                    "dataLink":"link/to/dataset",
+                    "dataLinkLogo":"link/to/datalinklogo"
+                }
+            }
+        }
+    }
+}

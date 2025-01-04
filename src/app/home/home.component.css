@@ -2,6 +2,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 .home-content{
   height: 100%;
@@ -36,4 +37,10 @@
   width: 10px;
   border: 2px solid black;
   border-radius: 10px;
+}
+progress{
+  width: 100%;
+  border: none;
+  height: 10px;
+  color: blue;
 }

@@ -1,11 +1,12 @@
-<div class="container">
+<div class="container" *ngIf="Data">
   <div class="nav">
-    <div class="logo">Plant Species Identification</div>
+    <div class="logo">{{Data.home.subTitle}}</div>
     <div class="menus">
-      <a routerLink="/home" class="menu-links">Home</a>
-      <a routerLink="/resources" class="menu-links">Resources</a>
-      <a href="https://github.com/rishabh-108272/Plant_Species_App/blob/main/README.md" class="menu-links">Architecture</a>
-      <a href="https://github.com/rishabh-108272/Plant_Species_App/blob/main/README.md" class="menu-links">Github</a>
+      <div class="menu" *ngFor="let link of Data.links | keyvalue:originalOrder">
+        <a routerLink={{link.key}} class="menu-links" *ngIf="link.key!='architecture'">{{link.value}}</a>
+        <a href={{link.value}} class="menu-links" *ngIf="link.key==='architecture'" download={{link.value}}>{{link.key}}</a>
+      </div>
+      <a href="https://github.com/rishabh-108272/Plant_Species_App/blob/main/README.md" class="hrefLink"><img src="GithubLogo.png" alt="" height="25px"></a>
     </div>
   </div>
   <div class="main">
@@ -18,12 +19,10 @@
        <!-- download type options -->
       <div class="type-navigator">
         <div class="type-platform">
-          <div class="types-title">Andrioid</div>
-          <div class="types-logo">Logo</div>
+          <div class="types-logo"><img src="footer/androidLogo.png" alt="" height="20px"></div>
         </div>
         <div class="type-platform">
-          <div class="types-title">IOS</div>
-          <div class="types-logo">Logo</div>
+          <div class="types-logo" style="font-size: 20px;font-weight: 600;color: #d1d1d1;">IOS</div>
         </div>
       </div>
 
@@ -32,7 +31,7 @@
         <!-- Download type platform logo or image -->
         <div class="mobile-art">
           <div class="sub-mobile-art">
-            <img class="platform-image" src="Android.png" alt="" width="100%">
+            <img class="platform-image" src="footer/Android.png" alt="" width="100%">
           </div>
         </div>
 
