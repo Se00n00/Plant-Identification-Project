@@ -20,7 +20,12 @@ export class AppComponent{
     this.appdata.getData().subscribe((data) => {
       console.log(data);
       this.Data = data;
+      this.FooterData = this.Data.home.downloadOption[0]
+      console.log(this.FooterData)
     });
   }
   originalOrder = () => 0;
+  changeDownloadType(index:number){
+    this.FooterData = this.Data.home.downloadOption[index]
+  }
 }

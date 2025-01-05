@@ -1,32 +1,26 @@
 <div class="resources">
-    <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="center" class="custom-tab-group">
-        <mat-tab label="First">
+    <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="center" class="custom-tab-group" *ngFor="let resource of ResourceData">
+        <mat-tab label="{{resource.name}}">
             <div class="resource-content">
                 <div class="used-model">
                     <div class="used-model-head">
-                        <div class="used-model-title">Model Title</div>
-                        <a href="" class="model-link">
+                        <div class="used-model-title">{{resource.model.architecture}}</div>
+                        <a href="{{resource.model.architecture}}" style="display: flex;align-items: center;">
                             <img src="open_in_new.png" alt="open" height="30px">
                         </a>
                     </div>
+                    {{resource.purpose}}
                     <div class="model-image"></div>
+                    {{resource.description}}
                     <div class="model-readings">
-                        <div class="model-reading">
-                            <div class="model-reading-title">Read</div>
-                            <div class="model-reading-value">1</div>
-                        </div>
-                        <div class="model-reading">
-                            <div class="model-reading-title">Read</div>
-                            <div class="model-reading-value">2</div>
-                        </div>
-                        <div class="model-reading">
-                            <div class="model-reading-title">Read</div>
-                            <div class="model-reading-value">3</div>
+                        <div class="model-reading" *ngFor="let reading of resource.evaluationMetrics | keyvalue">
+                            <div class="model-reading-title">{{reading.key}}</div>
+                            <div class="model-reading-value">{{reading.value}}</div>
                         </div>
                     </div>
                 </div>
                 <div class="model-info">
-                    <div class="model-description">lorem100</div>
+                    <div class="model-description">{{resource.dataset.dataDescription}}</div>
                     <div class="dataset-list">
                         <div class="dataset-list-head">
                             <div class="dataset-list-title">Model Title</div>
@@ -44,8 +38,8 @@
                 </div>
             </div>
         </mat-tab>
-        <mat-tab label="Second" class="resource-content">Content 2</mat-tab>
+        <!-- <mat-tab label="Second" class="resource-content">Content 2</mat-tab>
         <mat-tab label="Third" class="resource-content">Content 3</mat-tab>
-        <mat-tab label="Third" class="resource-content">Content 3</mat-tab>
+        <mat-tab label="Third" class="resource-content">Content 3</mat-tab> -->
     </mat-tab-group>
 </div>

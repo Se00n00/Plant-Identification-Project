@@ -33,31 +33,33 @@
                 "feature3D":"3D feature Object"
             }
         ],
-        "downloadOption":{
-            "android":{
+        "downloadOption":[
+            {
                 "Heading":"Mobile/Tablet",
                 "platform":"Android",
-                "platformLogo":"path/to/logo",
-                "platformImage":"link/to/image",
+                "platformImage":"footer/Android.png",
                 "requirements":"Minumum Requirements Android OS 4.0 (Name ?) or above",
                 "applicationLogo":"link/to/applicationLogo",
+                "downloadTitle":"Download",
                 "downloadFilePath":"link/to/existing/file"
             },
-            "ios":{
+            {
                 "Heading":"Mobile/Tablet",
                 "platform":"IOS",
-                "platformLogo":"path/to/logo",
-                "platformImage":"link/to/image",
+                "platformImage":"footer/Android.png",
                 "requirements":"Minumum Requirements Android OS 4.0 (Name ?) or above",
                 "applicationLogo":"link/to/applicationLogo",
+                "downloadTitle":"Download",
                 "downloadFilePath":"link/to/existing/file"
             }
-        }
+        ]
     },
     "dataset":{
         "title":"Dataset",
         "subtitle":"Plant Species Dataset",
-        "YOLO":{
+        "models":
+        [{
+            "name":"YOLOv11",
             "purpose":"Object-Detection",
             "description":"blah-blah",
             "evaluationMetrics":{
@@ -77,7 +79,8 @@
                 }
             }
         },
-        "effiecientNetB0":{
+        {
+            "name":"EffiecientNet-B0",
             "purpose":"Object-Detection",
             "description":"blah-blah",
             "evaluationMetrics":{
@@ -97,7 +100,8 @@
                 }
             }
         },
-        "vGG16":{
+        {
+            "name":"YOLOv11",
             "purpose":"Classification",
             "description":"blah-blah",
             "evaluationMetrics":{
@@ -117,7 +121,8 @@
                 }
             }
         },
-        "resNet50":{
+        {
+            "name":"YOLOv11",
             "purpose":"Object-Detection",
             "description":"blah-blah",
             "evaluationMetrics":{
@@ -136,6 +141,6 @@
                     "dataLinkLogo":"link/to/datalinklogo"
                 }
             }
-        }
+        }]
     }
 }

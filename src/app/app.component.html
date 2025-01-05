@@ -6,7 +6,7 @@
         <a routerLink={{link.key}} class="menu-links" *ngIf="link.key!='architecture'">{{link.value}}</a>
         <a href={{link.value}} class="menu-links" *ngIf="link.key==='architecture'" download={{link.value}}>{{link.key}}</a>
       </div>
-      <a href="https://github.com/rishabh-108272/Plant_Species_App/blob/main/README.md" class="hrefLink"><img src="GithubLogo.png" alt="" height="25px"></a>
+      <a href="https://github.com/rishabh-108272/Plant_Species_App/blob/main/README.md" class="hrefLink"><div id="githubLink"></div></a>
     </div>
   </div>
   <div class="main">
@@ -18,10 +18,10 @@
 
        <!-- download type options -->
       <div class="type-navigator">
-        <div class="type-platform">
+        <div class="type-platform" (click)="changeDownloadType(0)" style="cursor: pointer;">
           <div class="types-logo"><img src="footer/androidLogo.png" alt="" height="20px"></div>
         </div>
-        <div class="type-platform">
+        <div class="type-platform" (click)="changeDownloadType(1)" style="cursor: pointer;">
           <div class="types-logo" style="font-size: 20px;font-weight: 600;color: #d1d1d1;">IOS</div>
         </div>
       </div>
@@ -31,7 +31,7 @@
         <!-- Download type platform logo or image -->
         <div class="mobile-art">
           <div class="sub-mobile-art">
-            <img class="platform-image" src="footer/Android.png" alt="" width="100%">
+            <img class="platform-image" src="{{FooterData.platformImage}}" alt="" width="100%">
           </div>
         </div>
 
@@ -40,17 +40,17 @@
           <div class="Download-Type">
             <div class="Type-title">
               <div class="Type-Name">Mobile/Tablet</div>
-              <div class="Type-Os">Android</div>
+              <div class="Type-Os">{{FooterData.platform}}</div>
             </div>
             <div class="Download-Description">
-              Minimum Requirements (Version 2.22.13.77) Android OS 4.0.3 or above
+              {{FooterData.requirements}}
             </div>
           </div>
           <div class="Download-Image-with-link">
             <a href="" class="download-link">
               <div class="download-link-box">
-                <div class="download-title">Title</div>
-                <div class="download-logo">logo</div>
+                <div class="download-title">{{FooterData.downloadTitle}}</div>
+                <div class="download-logo"><img src={{FooterData.applicationLogo}} alt=""></div>
               </div>
             </a>
           </div>
