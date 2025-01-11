@@ -1,16 +1,31 @@
 <div class="container" *ngIf="Data">
-  <div class="nav">
-    <div class="logo">{{Data.home.subTitle}}</div>
-    <div class="menus">
-      <div class="menu" *ngFor="let link of Data.links | keyvalue:originalOrder">
-        <a routerLink={{link.key}} class="menu-links" *ngIf="link.key!='architecture'">{{link.value}}</a>
-        <a href={{link.value}} class="menu-links" *ngIf="link.key==='architecture'" download={{link.value}}>{{link.key}}</a>
-      </div>
-      <a href="https://github.com/rishabh-108272/Plant_Species_App/blob/main/README.md" class="hrefLink"><div id="githubLink"></div></a>
-    </div>
-  </div>
   <div class="main">
-    <router-outlet></router-outlet>
+    
+    <div class="nav">
+      <div class="menus">
+        <div class="menu" *ngFor="let link of Data.links | keyvalue:originalOrder">
+          <a routerLink={{link.key}} class="menu-links" *ngIf="link.key!='architecture'">{{link.value}}</a>
+          <a href={{link.value}} class="menu-links" *ngIf="link.key==='architecture'" download={{link.value}}>{{link.key}}</a>
+        </div>
+        <a href="https://github.com/rishabh-108272/Plant_Species_App/blob/main/README.md" class="hrefLink"><div id="githubLink"></div></a>
+      </div>
+    </div>
+    <div class="pages">
+      <div class="logo">AA{{Data.home.subTitle}}</div>
+      <router-outlet></router-outlet>
+      <div class="loop-wrapper">
+        <div class="mountain"></div>
+        <div class="hill"></div>
+        <div class="hill"></div>
+        <div class="tree"></div>
+        <div class="tree"></div>
+        <div class="tree"></div>
+        <div class="rock"></div>
+        <div class="truck"></div>
+        <div class="wheels"></div>
+        
+      </div> 
+    </div>
   </div>
 
   <div class="footer">

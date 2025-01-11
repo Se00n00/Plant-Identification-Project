@@ -3,22 +3,22 @@
   outline: none;
 }
 .container {
-  /* height: 100vh; */
   text-align: center;
-  background-color:  rgba(2, 61, 100, 0.829);
+  --bg-color:rgba(2, 61, 100);
+  background-color: var(--bg-color);
   color: #000000;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
-  /* overflow: hidden; */
+  position: relative;
 }
 
 .nav{
-  position: sticky;
-  top: 20px;
+  position: absolute;
+  right: 1px;
+  top: 1px;
   margin: 20px;
   display: flex;
   flex-direction: row;
@@ -28,7 +28,18 @@
   flex-wrap: wrap-reverse;
   z-index: 100;
 }
+.nav::after{
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 5px;
+  left: 0px;
+  top: 10px;
+  background-color: var(--bg-color);
+}
 .logo{
+  display: flex;
+  padding: 20px;
   font-size: 20px;
 }
 .menus{
@@ -45,7 +56,7 @@
   border-radius: 20px;
   backdrop-filter: blur(5px);
   background-image: linear-gradient(90deg, rgba(29, 116, 216, 0.089), rgba(116, 114, 230, 0.103));
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.116);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.116), 30px 10px var(--bg-color), -10px 10px var(--bg-color), -10px -20px var(--bg-color), 20px -20px var(--bg-color);
 }
 .menu-links{
   text-decoration: none;
@@ -60,7 +71,7 @@
   width: inherit;
   height: 0px;
   content: "";
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: 1px solid rgba(247, 0, 0, 0);
   display: block;
   visibility: visible;
   transform: scale(0.0);
@@ -88,14 +99,173 @@
   background-image: url("/GithubBlackLogo.png");
   background-size: cover;
 }
-  
+
+
+/*
+_________START : ANIMATION______
+*/
+.loop-wrapper {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  height: 100px;
+  overflow: hidden;
+  border-bottom: 3px solid #fff;
+  color: #fff;
+  background: #009688;
+  width: 100%;
+}
+.mountain {
+  position: absolute;
+  right: -900px;
+  bottom: -20px;
+  width: 2px;
+  height: 2px;
+  box-shadow: 
+    0 0 0 50px #4DB6AC,
+    60px 50px 0 70px #4DB6AC,
+    90px 90px 0 50px #4DB6AC,
+    250px 250px 0 50px #4DB6AC,
+    290px 320px 0 50px #4DB6AC,
+    320px 400px 0 50px #4DB6AC
+    ;
+  transform: rotate(130deg);
+  animation: mtn 20s linear infinite;
+}
+.hill {
+  position: absolute;
+  right: -900px;
+  bottom: -50px;
+  width: 400px;
+  border-radius: 50%;
+  height: 20px;
+  box-shadow: 
+    0 0 0 50px #4DB6AC,
+    -20px 0 0 20px #4DB6AC,
+    -90px 0 0 50px #4DB6AC,
+    250px 0 0 50px #4DB6AC,
+    290px 0 0 50px #4DB6AC,
+    620px 0 0 50px #4DB6AC;
+  animation: hill 4s 2s linear infinite;
+}
+.tree, .tree:nth-child(2), .tree:nth-child(3) {
+  position: absolute;
+  height: 100px; 
+  width: 35px;
+  bottom: 0;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/tree.svg) no-repeat;
+}
+.rock {
+  margin-top: -17%;
+  height: 2%; 
+  width: 2%;
+  bottom: -2px;
+  border-radius: 20px;
+  position: absolute;
+  background: #ddd;
+}
+.truck, .wheels {
+  transition: all ease;
+  width: 85px;
+  margin-right: -60px;
+  bottom: 0px;
+  right: 50%;
+  position: absolute;
+  background: #eee;
+}
+.truck {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/truck.svg) no-repeat;
+  background-size: contain;
+  height: 60px;
+}
+.truck:before {
+  content: " ";
+  position: absolute;
+  width: 25px;
+  box-shadow:
+    -30px 28px 0 1.5px #fff,
+     -35px 18px 0 1.5px #fff;
+}
+.wheels {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/wheels.svg) no-repeat;
+  height: 15px;
+  margin-bottom: 0;
+}
+
+.tree  { animation: tree 3s 0.000s linear infinite; }
+.tree:nth-child(2)  { animation: tree2 2s 0.150s linear infinite; }
+.tree:nth-child(3)  { animation: tree3 8s 0.050s linear infinite; }
+.rock  { animation: rock 4s   -0.530s linear infinite; }
+.truck  { animation: truck 4s   0.080s ease infinite; }
+.wheels  { animation: truck 4s   0.001s ease infinite; }
+.truck:before { animation: wind 1.5s   0.000s ease infinite; }
+
+
+@keyframes tree {
+  0%   { transform: translate(1350px); }
+  50% {}
+  100% { transform: translate(-50px); }
+}
+@keyframes tree2 {
+  0%   { transform: translate(650px); }
+  50% {}
+  100% { transform: translate(-50px); }
+}
+@keyframes tree3 {
+  0%   { transform: translate(2750px); }
+  50% {}
+  100% { transform: translate(-50px); }
+}
+
+@keyframes rock {
+  0%   { right: -200px; }
+  100% { right: 2000px; }
+}
+@keyframes truck {
+  0%   { }
+  6%   { transform: translateY(0px); }
+  7%   { transform: translateY(-6px); }
+  9%   { transform: translateY(0px); }
+  10%   { transform: translateY(-1px); }
+  11%   { transform: translateY(0px); }
+  100%   { }
+}
+@keyframes wind {
+  0%   {  }
+  50%   { transform: translateY(3px) }
+  100%   { }
+}
+@keyframes mtn {
+  100% {
+    transform: translateX(-2000px) rotate(130deg);
+  }
+}
+@keyframes hill {
+  100% {
+    transform: translateX(-2000px);
+  }
+}
 /*
 _________START : MAIN__________
 */
+
 .main{
-  height: 80vh;
-  
+  height: 90vh;
   box-sizing: border-box;
+  padding: 20px;
+}
+.pages{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+
+}
+router-outlet{
+  flex:1;
+  
 }
 app-home{
   height: 100%;
@@ -172,7 +342,15 @@ _________START : FOOTER________
   box-sizing: border-box;
   padding: 20px;
   background-color: rgba(3, 255, 3, 0.274);
-  /* background-color: black; */
+  animation: slideIn 100ms ease-in 100ms 1;
+}
+@keyframes slideIn{
+  0%{
+    transform: translateX(-50px);
+  }
+  100%{
+    transform: translateX(50px);
+  }
 }
 
 .sub-mobile-art{
@@ -199,6 +377,7 @@ _________START : FOOTER________
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: jumpIn 100ms ease-in 100ms 1;
 }
 .Download-Type, .download-link-box{
   width: 300px;
